@@ -18,11 +18,14 @@
     <link rel="stylesheet" href="css/pokemon.css">
 
 </head>
+
 <body id="cuerpo">
     <header>
         <nav id="navbar" class="navbar navbar-expand-lg m-0 ">
             <div class="container-fluid">
-                <a id="navbar-brand" href="index.html" class="navbar-brand">POKEVUE</a>
+                <div class="container-sm d-flex justify-content-start">
+                    <a id="navbar-brand" href="index.html" class="navbar-brand">POKEVUE</a>
+                </div>
                 <div id="autores" class="container-sm d-flex justify-content-end">
                     <div class="p-2 bd-highlight">John Palacios</div>
                     <div class="p-2 bd-highlight">Bianca Quiñonez</div>
@@ -39,12 +42,13 @@
             </div>
             <div class="col-md-12 p-2 text-left">
                 <h3 class="m-0">Buscar Pokémon</h3>
-                <input id="buscador" class="form-control text-light rounded-pill" type="text" v-model="search" placeholder="Nombre">
+                <input id="buscador" class="form-control text-light rounded-pill" type="text" v-model="search"
+                    placeholder="Nombre">
             </div>
             <div v-for="pokemon in pokeList" class="col-md-3 p-1 text-center">
                 <div class="card">
                     <a data-bs-toggle="modal" v-bind:data-bs-target="'#poke-'+pokemon.alias">
-                        <img loading="lazy" class="card-img-top pkm" alt="NOT FOUND"
+                        <img loading="lazy" class="card-img-top pkm  pkm-wrapper" alt="NOT FOUND"
                             v-bind:src="'img/pokemon/'+pokemon.sprite+'.png'">
                     </a>
                     <div class="card-body">
@@ -88,11 +92,32 @@
                                 <div class="modal-footer">
                                     <input class="form-control border border-1 border-dark rounded-pill" type="text"
                                         v-model="comment" placeholder="Comentar...">
-                                    <button type="button" class="btn btn-success rounded-pill"
-                                        v-on:click="saveComment">Comentar</button>
+                                    <button type="button" class="btn btn-success rounded-pill" v-on:click="saveComment"
+                                        data-bs-toggle="modal" data-bs-target="#confirmed"
+                                        data-bs-dismiss="modal" :disabled="comment === ''">Comentar</button>
                                     <button type="button" class="btn btn-danger rounded-pill"
                                         data-bs-dismiss="modal">Cerrar</button>
                                 </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="confirmed" tabindex="-1" aria-labelledby="confirmedLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmedLabel">MENSAJE GUARDADO</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¡Comentario correctamente guardado!
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger"
+                                        data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
                             </div>
                         </div>
                     </div>
