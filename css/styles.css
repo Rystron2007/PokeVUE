@@ -1,18 +1,35 @@
 :root {
     --amarillo: #ffed7c;
-    --white: #ffffff;
+    --rojo: #d3320d;
+    --azul: #04265d;
+    --blanco: #ffffff;
 }
 
 #navbar{
-    background-color: var(--amarillo);
+    background-color: var(--azul);
 }
 
 #navbar-brand{
     font-size: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 10px;
+    color: var(--blanco);
 }
 
 #autores{
     font-size: 15px;
+    color: var(--blanco);
 }
+
+#titular{
+    color: var(--blanco);
+}
+
+#cuerpo{
+    background-color: var(--blanco);
+}
+
+#buscador{
+    background-color: var(--azul);
+}
+
