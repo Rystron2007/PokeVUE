@@ -1,0 +1,18 @@
+:root {
+    --amarillo: #ffed7c;
+    --white: #ffffff;
+}
+
+#navbar{
+    background-color: var(--amarillo);
+}
+
+#navbar-brand{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 10px;
+}
+
+#autores{
+    font-size: 15px;
+}
