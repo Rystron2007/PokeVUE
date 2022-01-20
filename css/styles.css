@@ -22,7 +22,13 @@
 }
 
 #titular{
-    color: var(--blanco);
+    font-size: 5rem;
+}
+
+@media(max-width: 720px){
+    #titular{
+        font-size: calc(1vw + 1.0rem);
+    }
 }
 
 #cuerpo{
